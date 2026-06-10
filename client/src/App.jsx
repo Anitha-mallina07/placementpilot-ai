@@ -1,26 +1,22 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import CareerPaths from "./components/CareerPaths";
+import Timeline from "./components/Timeline";
+import ProfileForm from "./components/ProfileForm";
+import Footer from "./components/Footer";
 
 function App() {
-  const [message, setMessage] = useState("Loading...");
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000")
-      .then((res) => {
-        console.log(res.data);
-        setMessage(res.data.message);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
   return (
-    <div>
-      <h1>PlacementPilot AI</h1>
-      <h2>{message}</h2>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Features />
+      <CareerPaths />
+      <Timeline />
+      <ProfileForm />
+      <Footer />
+    </>
   );
 }
 
